@@ -1,0 +1,247 @@
+/* common */
+
+img {
+  display: block;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;  
+  cursor: pointer;
+}
+
+
+
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  min-width: 375px;
+  background: #eeebe5;
+  position: relative;
+}
+
+/* phone-info */
+.wrap .phone-info {
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+}
+
+.wrap .phone-info .time {
+  margin-top: 13px;
+  margin-left: 21px;
+}
+
+.wrap .phone-info ul {
+  display: flex;
+}
+
+.wrap .phone-info li {
+  margin-top: 13px;
+  margin-right: 3px;
+}
+
+.wrap .phone-info li:last-child {
+  margin-right: 5px;
+}
+
+header>ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .profile {
+  margin-left: 30px;
+}
+
+header .header-option ul {
+  display: flex;
+  margin-right: 31px;
+}
+
+header .header-option ul img:last-child {
+  margin-left: 13px;
+}
+
+
+/* card */
+.card {
+  background: #ffffff;
+  margin-top: 39px;
+  margin-left: 51px;
+  margin-right: 52px;
+  height: 157px;
+  box-shadow: 0px 0px 20px rgba(248, 193, 88, 0.25);
+  border-radius: 10px;
+  position: relative;
+}
+
+.card .card-top>ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .card-top .Account-number {
+  margin-top: 13px;
+}
+
+.card .card-top>ul .send {
+  margin-top: 13px;
+  position: absolute;
+  top: -1px;
+  right: 26px;
+  font-weight: bold;
+}
+
+.card .card-top .Change {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 20px;
+  margin-top: 35px;
+}
+
+.card .card-top .chart-bar {
+  display: flex;
+}
+
+.card .card-top .Account-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.card .card-top .chart-bar .chart {
+  margin-top: 20px;
+}
+
+.card .card-top .Account-bar .Account-slidebar {
+  width: 202px;
+  height: 6px;
+  margin-right: 7px;
+  margin-bottom: -2px;  
+}
+
+.card .card-top .Account-bar input {
+  width:50%; 
+  -webkit-appearance: none; 
+  /* background:  #C4C4C4; */
+  background: #FFDB4C;
+  border-radius: 3px;  
+}
+
+.card .card-top .Account-bar input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 4px;
+  height: 17px;
+  border: 2px solid #FF5F00;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.card .card-top .card-bottom {
+  display: flex;
+  justify-content: center;  
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  color: #858585;
+}
+
+/* ad */
+
+.ad {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 매일 거래 내역 */
+
+.transaction-container {
+  background: #F5F5F5;
+  box-shadow: 0px -5px 14px rgba(189, 144, 28, 0.08);
+  border-radius: 30px 30px 0px 0px;
+  height: 52vh;
+  position: relative;
+}
+
+.transaction-container .scroll-bar {
+  position: absolute;
+  top: 7px;
+  left: 48.5%;
+  cursor: pointer;
+}
+
+.transaction-container .graph ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.transaction-container .graph .fill1 .go-trip {
+  width: 162px;
+  height: 47px;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+}
+
+.transaction-container .graph .fill2 .freezer {
+  width: 162px;
+  height: 47px;
+  position: absolute;
+  top: 25px;
+  left: 230px;
+}
+
+.transaction-container .graph .fill1 input { 
+  width:100%; 
+  -webkit-appearance: none; 
+  /* background:  #C4C4C4; */
+  background: linear-gradient(90deg,rgb(255,95,0) 60%, rgb(218,218,218) 60%);
+  border-radius: 6px;
+}
+
+
+.transaction-container .graph .fill1 input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+}
+
+
+.transaction-container .graph .fill2 input { 
+  width:100%; 
+  -webkit-appearance: none; 
+  /* background:  #C4C4C4; */
+  background: linear-gradient(90deg,rgb(254,183,0) 85%, rgb(218,218,218) 60%);
+  border-radius: 6px;
+}
+
+.transaction-container .graph .fill2 input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+}
+
+
+
+/* footer */
+footer .tab-menu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  background: linear-gradient(163.63deg, #00BDB2 11.35%, #C4E7B8 139.96%);
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 65px;
+}

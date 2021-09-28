@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank-app</title>
+
+  <!-- css reset -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+<link rel="stylesheet" href="./main.css">
+
+</head>
+<body>
+  <div class="wrap">
+    <!-- 핸드폰 상태에 관한 사항 -->
+    <div class="phone-info">
+      <div class="time">9:41</div>
+      <ul>
+        <li>
+          <img src="./assets/Cellular_Connection.svg" alt="셀룰러 상태" />
+        </li>
+        <li>
+          <img src="./assets/Wifi.svg" alt="와이파이" />
+        </li>
+        <li>
+          <img src="./assets/Battery.svg" alt="배터리" />
+        </li>
+      </ul>
+    </div>
+
+    <!-- header -->
+    <header>
+      <ul>
+        <li>
+          <div class="profile">
+            <img src="./assets/header-profile.png" alt="프로필" />
+          </div>
+          <h3>생활비</h3>
+          <div class="header-option">
+            <ul>
+              <li>
+                <a href="javascript:void(0)">
+                  <img src="./assets/header-option-qr.svg" alt="QR" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <img src="./assets/header-option-search.svg" alt="Search" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+    <!-- card -->
+    <div class="card">
+      <div class="card-top">
+        <ul>
+          <li>
+            <div class="Account-number">355-673877-78773</div>
+          </li>
+          <li>
+            <button class='send'>이체</button>
+          </li>
+        </ul>
+        <div class="Change">1,240,000원</div>
+        <ul class='chart-bar'>
+          <li>
+            <div class="Account-bar">
+              <input type="range" min="0" max="100" value="60" step="1" id="standard" class="Account-slidebar">
+            </div>
+          </li>
+          <li>
+            <button class='chart'>
+              <img src="./assets/mdi_bar_chart.svg" alt="chart" />
+            </button>          
+          </li>
+        </ul>
+        <div class="card-bottom">5일 동안 210,000원 남음</div>
+      </div>
+    </div>
+
+    <!-- 대출관련 광고 -->
+    <div class="ad">지금 낮은 이자로 생활대출을 신청하세요! <u>Go</u></div>
+
+    <div class="transaction-container">
+      <img class="scroll-bar" src="./assets/scroll-bar.svg" alt="scroll_bar" />
+
+      <div class="graph">
+        <ul>
+          <li class="fill1">
+            <input type="range" min="0" max="100" value="60" step="1" class='go-trip'>
+            <span>여행가자!</span>
+            <span>842,200원</span>
+          </li>
+          <li class="fill2">
+            <input type="range" min="0" max="100" value="60" step="1" class='freezer'>
+            <span>냉장고사기</span>
+            <span>142,200원</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="json"></div>
+
+      <!-- footer -->
+      <footer>
+        <ul class="tab-menu">
+          <li class="tab-menu-item">
+            <a href="javascript:void(0)">
+              <img src="./assets/tab-menu-item(1).svg" alt="tab-menu_1" />
+            </a>
+          </li>
+          <li class="tab-menu-item">
+            <a href="javascript:void(0)">
+              <img src="./assets/tab-menu-item(2).svg" alt="tab-menu_1" />
+            </a>
+          </li>
+          <li class="tab-menu-item">
+            <a href="javascript:void(0)">
+              <img src="./assets/tab-menu-item(3).svg" alt="tab-menu_3" />
+            </a>
+          </li>
+          <li class="tab-menu-item">
+            <a href="javascript:void(0)">
+              <img src="./assets/tab-menu-item(4).svg" alt="tab-menu_4" />
+            </a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
