@@ -6,9 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bank-app</title>
 
-  <!-- css reset -->
+  <!-- css -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
 <link rel="stylesheet" href="./css/main.css">
+
+  <!-- swiper -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- javascript -->
+<script defer src="./js/main.js"></script>
 
 </head>
 <body>
@@ -93,18 +100,21 @@
         <ul>
           <li class="fill1">
             <input type="range" min="0" max="100" value="60" step="1" class='go-trip'>
-            <span>여행가자!</span>
-            <span>842,200원</span>
+            <span>여행가자! <br>842,200원</span>
           </li>
           <li class="fill2">
             <input type="range" min="0" max="100" value="60" step="1" class='freezer'>
-            <span>냉장고사기</span>
-            <span>142,200원</span>
+            <span>냉장고사기 <br>142,200원</span>
           </li>
         </ul>
       </div>
 
-      <div class="json"></div>
+      <!-- json data -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"></div>
+        </div>
+      </div>
 
       <!-- footer -->
       <footer>

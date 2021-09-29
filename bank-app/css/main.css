@@ -195,6 +195,26 @@ header .header-option ul img:last-child {
   left: 30px;
 }
 
+.transaction-container .graph .fill1 span {
+  position: absolute;
+  top: 35px;
+  left: 45px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;  
+}
+
+.transaction-container .graph .fill2 span {
+  position: absolute;
+  top: 35px;
+  left: 245px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;  
+}
+
 .transaction-container .graph .fill2 .freezer {
   width: 162px;
   height: 47px;
@@ -231,6 +251,10 @@ header .header-option ul img:last-child {
   appearance: none;
 }
 
+
+.transaction-container .swiper-container .swiper-slide {
+  
+}
 
 
 /* footer */
