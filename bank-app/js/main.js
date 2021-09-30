@@ -17,32 +17,52 @@ request.onload = function () {
   const BankList = request.response;
 
   showBankList(BankList);
+
 };
 
+new Swiper('.transaction-container .swiper-container', {
+  direction: 'vertical'
+})
+
+// 오늘 날짜 생성
+function Today() {
+  const days = new Date();
+  // 한국에서 쓰는 날짜 형태로 변환
+  return `${days.getFullYear()}${String(days.getMonth() + 1).padStart(2, 0)}${String(
+    days.getDate()
+    ).padStart(2, 0)}`;
+}
 
 function showBankList(jsonObj) {
   let banklist = jsonObj['bankList'];
-  
-  for(let i=0; i<banklist.length; i++) {
-    let myArticle = document.createElement('article');
-    let myPara1 = document.createElement('p');
-    let myPara2 = document.createElement('p');
-    let myPara3 = document.createElement('p');
-    let myPara4 = document.createElement('p');
-    let myPara5 = document.createElement('p');
-    
-    myPara1.textContent = 'date: '+ banklist[i].date;
-    myPara2.textContent = 'income: '+ banklist[i].income;
-    myPara3.textContent = 'classify: '+ banklist[i].classify;
-    myPara4.textContent = 'history: '+ banklist[i].history;
-    myPara5.textContent = 'price: '+ banklist[i].price;
+  const day_list = [];
 
-    myArticle.appendChild(myPara1);
-    myArticle.appendChild(myPara2);
-    myArticle.appendChild(myPara3);
-    myArticle.appendChild(myPara4);
-    myArticle.appendChild(myPara5);
-
-    json.appendChild(myArticle);
-  }
+  banklist.map((object) => {
+    if(!day_list.includes(object['date'])) { // 새로운 날짜면 
+      day_list.push(object['date']);
+      // 요소를 추가한다.
+      json.innerHTML += `
+      <section class="day${object['date'].slice(5,7)}${object['date'].slice(8,10)}">
+        <header class="day_title">
+          <h3>${object['date']}</h3>
+          <span class="day__amount sub-text">원 지출</span>
+        </header>
+        <ol>
+          <li>
+            <p>${object['history']}</p>
+            <span>${object['price']}</span>
+          </li>
+        </ol>
+      </section>`;
+    }
+    else {
+      const a = json.querySelector(`.day${object['date'].slice(5,7)}${object['date'].slice(8,10)} ol`)
+      a.innerHTML += `
+      <li>
+        <p>${object['history']}</p>
+        <span>${object['price']}</span>
+      </li>`;
+    }
+  })
 }
+
