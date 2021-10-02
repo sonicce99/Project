@@ -117,95 +117,103 @@
       </div>
 
       <!-- json data -->
-      <div class="swiper-container">
+      <div class="swiper-container swiper1">
         <div class="swiper-wrapper">
           <div class="swiper-slide"></div>
         </div>
       </div>
+
     </div>
   </div>
 
   <!-- chart page -->
-  <div class="chart">
-    <button class="close">닫기</button>
-    <h2>지출 관리</h2>
-    <div class="standard-setting">
-      <p class="standard">기준금액설정</p>
-      <span>2,100,000원</span>
-    </div>
-    <div class="Standard-bar">
-    <input type="range" 
-    min="0" max="100" value="70" step="1" class="standard-slidebar">
-    </div>
-
-    <div class="daily-report">
-      <p class="day-report">일간 리포트</p>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <canvas id="myChartOne"></canvas>
+  <div class="chart-page">
+    <div class="swiper-container swiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide chart">
+          <button class="close">닫기</button>
+          <h2>지출 관리</h2>
+          <div class="standard-setting">
+            <p class="standard">기준금액설정</p>
+            <span>2,100,000원</span>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="spending-pattern">
-      <p>6월 지출 패턴</p>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <canvas id="myChartTwo"></canvas>
-            <div class="whole">
-              <span>1,736,500</span>
-              <p>원</p>
+          <div class="Standard-bar">
+          <input type="range" 
+          min="0" max="100" value="70" step="1" class="standard-slidebar">
+          </div>
+  
+          <div class="daily-report">
+            <p class="day-report">일간 리포트</p>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <canvas id="myChartOne"></canvas>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="inner">
-        <ul>
-          <li>
-            <img src="./assets/spending-pattern-icon(1).svg" alt="차모양" />
-          </li>
-          <li>
-            <img src="./assets/spending-pattern-icon(2).svg" alt="건강관리비" />
-          </li>
-          <li>
-            <img src="./assets/spending-pattern-icon(3).svg" alt="외식비" />
-          </li>
-          <li>
-            <img src="./assets/spending-pattern-icon(4).svg" alt="장보기" />
-          </li>
-          <li>
-            <img src="./assets/spending-pattern-icon(5).svg" alt="상점" />
-          </li>
-        </ul>
-        <div class="spend">
-          <div class="spend-money">
-            <p>주유비</p>
-            <span>56,000원</span>
-          </div>
-          <div class="spend-money">
-            <p>건강관리비</p>
-            <span>80,000원</span>
-          </div>
-          <div class="spend-money">
-            <p>외식비</p>
-            <span>233,000원</span>
-          </div>
-          <div class="spend-money">
-            <p>장보기</p>
-            <span>390,000원</span>
-          </div>
-          <div class="spend-money">
-            <p>상점</p>
-            <span>46,000원</span>
+  
+          <div class="spending-pattern">
+            <p>6월 지출 패턴</p>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <canvas id="myChartTwo"></canvas>
+                  <div class="whole">
+                    <span>1,736,500</span>
+                    <p>원</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inner">
+              <ul>
+                <li>
+                  <img src="./assets/spending-pattern-icon(1).svg" alt="차모양" />
+                </li>
+                <li>
+                  <img src="./assets/spending-pattern-icon(2).svg" alt="건강관리비" />
+                </li>
+                <li>
+                  <img src="./assets/spending-pattern-icon(3).svg" alt="외식비" />
+                </li>
+                <li>
+                  <img src="./assets/spending-pattern-icon(4).svg" alt="장보기" />
+                </li>
+                <li>
+                  <img src="./assets/spending-pattern-icon(5).svg" alt="상점" />
+                </li>
+              </ul>
+              <div class="spend">
+                <div class="spend-money">
+                  <p>주유비</p>
+                  <span>56,000원</span>
+                </div>
+                <div class="spend-money">
+                  <p>건강관리비</p>
+                  <span>80,000원</span>
+                </div>
+                <div class="spend-money">
+                  <p>외식비</p>
+                  <span>233,000원</span>
+                </div>
+                <div class="spend-money">
+                  <p>장보기</p>
+                  <span>390,000원</span>
+                </div>
+                <div class="spend-money">
+                  <p>상점</p>
+                  <span>46,000원</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  
    <!-- footer -->
    <nav>
     <ul class="tab-menu">

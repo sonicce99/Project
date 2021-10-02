@@ -15,14 +15,20 @@ request.send();
 request.onload = function () {
   // BankDataRequest.response는 서버의 json 파일 객체에서 banklist의 배열을 가져옴
   const BankList = request.response;
-  console.log(BankList['bankList'])
 
   showBankList(BankList);
-
+  Chart2(BankList);
 };
 
 // 소비 관련 swiper
-new Swiper('.transaction-container .swiper-container', {
+new Swiper('.swiper1', {
+  direction: 'vertical',
+  slidesPerView: 'auto',
+  freeMode: true,
+  mousewheel: true
+});
+
+new Swiper('.swiper2', {
   direction: 'vertical',
   slidesPerView: 'auto',
   freeMode: true,
@@ -110,7 +116,7 @@ scroll_bar.addEventListener('click', function() {
 
 // Chart page Javascript 
 const chartImgEl = document.querySelector('.card .chart-bar .chart-in');
-const chartDisplay = document.querySelector('.chart');
+const chartDisplay = document.querySelector('.chart-page');
 const closeBtn = document.querySelector('.close');
 let clicked = false;
 
@@ -155,37 +161,40 @@ let barChart1 = new Chart(myChartOne, {
   }
 })
 
-const chartdata =
 // 지출패턴 chart
-const analyze = chartdata.reduce((acc, v) => {
-  acc[0] += v['income'] === 'in' ? v['price'] : 0; 
-  acc[1] += v['classify'] === 'health' ? v['price'] : 0;
-  acc[2] += v['classify'] === 'eatout' ? v['price'] : 0;
-  acc[3] += v['classify'] === 'mart' ? v['price'] : 0;
-  acc[4] += v['classify'] === 'shopping' ? v['price'] : 0;
-  acc[5] += v['classify'] === 'oiling' ? v['price'] : 0;
-  return acc;
-}, [0, 0, 0, 0, 0, 0])
+function Chart2(object) {
+  const analyze = object['bankList'].reduce((acc, v) => {
+    acc[0] += v['income'] === 'in' ? v['price'] : 0; 
+    acc[1] += v['classify'] === 'health' ? v['price'] : 0;
+    acc[2] += v['classify'] === 'eatout' ? v['price'] : 0;
+    acc[3] += v['classify'] === 'mart' ? v['price'] : 0;
+    acc[4] += v['classify'] === 'shopping' ? v['price'] : 0;
+    acc[5] += v['classify'] === 'oiling' ? v['price'] : 0;
+    return acc;
+  }, [0, 0, 0, 0, 0, 0])
+  
+  
+  let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+  let barChart2 = new Chart(myChartTwo, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        cutoutPercentage: 0,
+        backgroundColor: [
+          'rgba(255, 99, 132,1)', // Income
+          'rgba(245, 143, 41,1)', // health
+          'rgba(255, 75, 62,1)', // eatout
+          'rgba(35, 87, 137,1)', //mart
+          'rgba(155, 197, 61,1)', //shopping
+          'rgba(254, 194, 41,1)' //oiling
+        ],
+        data: analyze
+      }]
+    },
+    options: {
+      responsive: false,
+      cutout:100
+    }
+  })
+}
 
-
-let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
-let barChart2 = new Chart(myChartTwo, {
-  type: 'doughnut',
-  data: {
-    datasets: [{
-      cutoutPercentage: 0,
-      backgroundColor: [
-        'rgba(255, 99, 132,1)', // Income
-        'rgba(245, 143, 41,1)', // health
-        'rgba(255, 75, 62,1)', // eatout
-        'rgba(35, 87, 137,1)', //mart
-        'rgba(155, 197, 61,1)', //shopping
-        'rgba(254, 194, 41,1)' //oiling
-      ],
-      data: analyze
-    }]
-  },
-  options: {
-    cutout:130
-  }
-})

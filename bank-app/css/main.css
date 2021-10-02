@@ -362,21 +362,26 @@ header .header-option ul img:last-child {
 
 
 /* chart */
-.chart {
+.chart-page {
   position: relative;
   height: 0;
   overflow: hidden;
+  transition: .3s;
 }
 
 /* chart 페이지 보임 관련 */
-.chart.clicked {
+.chart-page.clicked {
   z-index: 1;
   position: absolute;
   height: calc(100% - 65px);
   width: 100%;
   margin-top: -100vh;
   background-color:#ffffff;
-  border: 2px solid black;
+  overflow: scroll;
+}
+
+.chart-page.clicked::-webkit-scrollbar {
+  display: none;
 }
 
 /* chart 페이지에서 닫기 버튼 눌렸을 때  */
@@ -477,6 +482,83 @@ header .header-option ul img:last-child {
   height: 100px;
   border: 2px solid black;
 }
+
+.chart .spending-pattern>p {
+  margin-left: 29px;
+  font-family: Noto Sans CJK KR;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.24px;
+  color: #444444;  
+}
+
+.chart .spending-pattern #myChartTwo {
+  width: 300px;
+  height: 100px;
+  border: 2px solid black; 
+}
+
+.chart-page .spending-pattern .whole {
+  display: flex;
+  align-items: center;
+}
+
+.chart-page .spending-pattern .whole span {
+  font-family: Noto Sans CJK KR;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #000000;  
+}
+
+.chart-page .spending-pattern .whole p {
+  margin-top: 3px;
+}
+
+.chart-page .spending-pattern .inner {
+  display: flex;
+}
+
+.chart-page .spending-pattern .inner li {
+  font-family: Font Awesome 5 Free;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: -0.24px;
+}
+
+.chart-page .spending-pattern .inner .spend .spend-money {
+  display: flex;
+}
+
+.chart-page .spending-pattern .inner .spend .spend-money p {
+  font-family: Noto Sans CJK KR;
+  font-style: normal;
+  font-weight: 350;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: -0.24px; 
+  color: #000000;
+}
+
+.chart-page .spending-pattern .inner .spend .spend-money span {
+  font-family: Noto Sans CJK KR;
+  font-style: normal;
+  font-weight: 350;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: right;
+  letter-spacing: -0.24px;
+  color: #858585;  
+}
+
 
 /* footer */
 nav .tab-menu {
