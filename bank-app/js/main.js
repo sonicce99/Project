@@ -15,6 +15,7 @@ request.send();
 request.onload = function () {
   // BankDataRequest.response는 서버의 json 파일 객체에서 banklist의 배열을 가져옴
   const BankList = request.response;
+  console.log(BankList['bankList'])
 
   showBankList(BankList);
 
@@ -44,7 +45,8 @@ const day_list = [];
 function day_Spend (banklist,count) {
 
   const day =banklist.filter((t) => t['date'] === day_list[count])
-  return day.reduce((acc,curr) => curr['income'] === 'in' ? acc : acc+curr['price'],0)
+   const sum = day.reduce((acc,curr) => curr['income'] === 'in' ? acc : acc+curr['price'],0)
+   return sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
 }
 
 
@@ -105,16 +107,85 @@ scroll_bar.addEventListener('click', function() {
   }
 })
 
+
+// Chart page Javascript 
 const chartImgEl = document.querySelector('.card .chart-bar .chart-in');
 const chartDisplay = document.querySelector('.chart');
+const closeBtn = document.querySelector('.close');
 let clicked = false;
 
 chartImgEl.addEventListener('click', function () {
-  clicked = !clicked;
-  if(clicked) {
-    chartDisplay.classList.add('clicked');
+  clicked = true;
+  chartDisplay.classList.add('clicked');
+})
+
+closeBtn.addEventListener('click', function() {
+  clicked = false;
+  chartDisplay.classList.remove('clicked');
+})
+
+// 일간 리포트 chart
+let myChartOne = document.getElementById('myChartOne').getContext('2d');
+let barChart1 = new Chart(myChartOne, {
+  type: 'bar',
+  data: {
+    labels : ["02","04","06","08","10","12","14","18"],
+    datasets : [{
+      label: '',
+      barPercentage:0.2,
+      borderRadius: 3,
+      data : [78000,92000,72000,92000,76000,70000,98000,78000,97000],
+      backgroundColor: ['rgba(56,201,118,1)']
+    }]
+  },
+  options: {
+    responsive: false,  // 그래프의 width, height를 조정하기 위해선 false
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        grid: {
+          display:false
+        }
+      }
+    }
   }
-  else {
-    chartDisplay.classList.remove('clicked');
+})
+
+const chartdata =
+// 지출패턴 chart
+const analyze = chartdata.reduce((acc, v) => {
+  acc[0] += v['income'] === 'in' ? v['price'] : 0; 
+  acc[1] += v['classify'] === 'health' ? v['price'] : 0;
+  acc[2] += v['classify'] === 'eatout' ? v['price'] : 0;
+  acc[3] += v['classify'] === 'mart' ? v['price'] : 0;
+  acc[4] += v['classify'] === 'shopping' ? v['price'] : 0;
+  acc[5] += v['classify'] === 'oiling' ? v['price'] : 0;
+  return acc;
+}, [0, 0, 0, 0, 0, 0])
+
+
+let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+let barChart2 = new Chart(myChartTwo, {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      cutoutPercentage: 0,
+      backgroundColor: [
+        'rgba(255, 99, 132,1)', // Income
+        'rgba(245, 143, 41,1)', // health
+        'rgba(255, 75, 62,1)', // eatout
+        'rgba(35, 87, 137,1)', //mart
+        'rgba(155, 197, 61,1)', //shopping
+        'rgba(254, 194, 41,1)' //oiling
+      ],
+      data: analyze
+    }]
+  },
+  options: {
+    cutout:130
   }
 })
