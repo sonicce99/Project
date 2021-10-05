@@ -29,7 +29,11 @@
   <div class="wrap">
     <!-- 핸드폰 상태에 관한 사항 -->
     <div class="phone-info">
-      <div class="time">9:41</div>
+      <div class="time">
+        <div class="hour">9</div>
+        :
+        <div class="minute">41</div>
+      </div>
       <ul>
         <li>
           <img src="./assets/Cellular_Connection.svg" alt="셀룰러 상태" />
@@ -131,19 +135,20 @@
     <div class="swiper-container swiper2">
       <div class="swiper-wrapper">
         <div class="swiper-slide chart">
-          <button class="close">닫기</button>
-          <h2>지출 관리</h2>
+          <header class="header">
+            <button class="close">닫기</button>
+            <h2>지출 관리</h2>
+          </header>
           <div class="standard-setting">
             <p class="standard">기준금액설정</p>
             <span>2,100,000원</span>
           </div>
           <div class="Standard-bar">
-          <input type="range" 
-          min="0" max="100" value="70" step="1" class="standard-slidebar">
+          <input type="range" min="0" max="3000000" value="1000000" step="10000" class="standard-slidebar">
           </div>
   
           <div class="daily-report">
-            <p class="day-report">일간 리포트</p>
+            <p class="day-report">일간 지출 리포트</p>
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
@@ -154,22 +159,24 @@
           </div>
   
           <div class="spending-pattern">
-            <p>6월 지출 패턴</p>
+            <p>최근 30일 지출 패턴</p>
+
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
                   <canvas id="myChartTwo"></canvas>
-                  <div class="whole">
+                  <div class="hole">
                     <span>1,736,500</span>
                     <p>원</p>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="inner">
-              <ul>
+              <ul class="img">
                 <li>
-                  <img src="./assets/spending-pattern-icon(1).svg" alt="차모양" />
+                  <img src="./assets/spending-pattern-icon(6).jpg" alt="소득" class="aaa" />
                 </li>
                 <li>
                   <img src="./assets/spending-pattern-icon(2).svg" alt="건강관리비" />
@@ -183,30 +190,38 @@
                 <li>
                   <img src="./assets/spending-pattern-icon(5).svg" alt="상점" />
                 </li>
+                <li>
+                  <img src="./assets/spending-pattern-icon(1).svg" alt="차모양" />
+                </li>
               </ul>
-              <div class="spend">
-                <div class="spend-money">
-                  <p>주유비</p>
+              <ul class="word">
+                <li class="spend-money0">
+                  <p>소득</p>
                   <span>56,000원</span>
-                </div>
-                <div class="spend-money">
-                  <p>건강관리비</p>
+                </li>
+                <li class="spend-money1">
+                  <p>운동</p>
                   <span>80,000원</span>
-                </div>
-                <div class="spend-money">
+                </li>
+                <li class="spend-money2">
                   <p>외식비</p>
                   <span>233,000원</span>
-                </div>
-                <div class="spend-money">
+                </li>
+                <li class="spend-money3">
                   <p>장보기</p>
                   <span>390,000원</span>
-                </div>
-                <div class="spend-money">
-                  <p>상점</p>
+                </li>
+                <li class="spend-money4">
+                  <p>쇼핑</p>
                   <span>46,000원</span>
-                </div>
-              </div>
+                </li>
+                <li class="spend-money5">
+                  <p>주유비</p>
+                  <span>46,000원</span>
+                </li>
+              </ul>
             </div>
+
           </div>
         </div>
       </div>
@@ -214,12 +229,12 @@
   </div>
 
   
-   <!-- footer -->
+   <!-- nav -->
    <nav>
     <ul class="tab-menu">
       <li class="tab-menu-item">
         <a href="javascript:void(0)">
-          <img src="./assets/home.svg" alt="tab-menu_1" />
+          <img src="./assets/home.svg" alt="tab-menu_1" class="home" />
         </a>
       </li>
       <li class="tab-menu-item">
@@ -239,5 +254,6 @@
       </li>
     </ul>
   </nav>
+
 </body>
 </html>
