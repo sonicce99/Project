@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+
+  td,
+  th {
+    white-space: nowrap;
+    vertical-align: center;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  td {
+    @include text-style(12);
+    padding: 12px 24px;
+    overflow: hidden;
+    border: 1px solid $border;
+    border-bottom-color: $dark;
+  }
+
+  thead {
+    background-color: #000;
+    color: #fff;
+
+    th {
+      height: 44px;
+      padding: 4px 12px;
+      background-color: #1f2d3d;
+      color: #fff;
+    }
+  }
+}

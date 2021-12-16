@@ -1,0 +1,93 @@
+%btn-base {
+  @include inline-flexbox();
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid $border;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.btn-primary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $blue;
+  transition: background-color 200ms ease-in-out;
+
+  &:focus,
+  &:active,
+  &:not(:disabled):hover {
+    background-color: $blue-dark;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-secondary {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $white;
+  transition: background-color 300ms ease-in-out;
+  transition: color 200ms ease-in-out;
+
+  &:focus,
+  &:active,
+  &:not(:disabled):hover {
+    outline: none;
+    box-shadow: none;
+    color: $blue;
+    background-color: $background;
+  }
+}
+
+.btn-anchor {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $white;
+  transition: color 200ms ease-in-out;
+
+  &:focus,
+  &:active,
+  &:not(:disabled):hover {
+    outline: none;
+    box-shadow: none;
+    color: $blue;
+  }
+}
+
+.btn-16 {
+  @include text-style(16);
+  height: 44px;
+}
+
+.btn-confirm {
+  @extend %btn-base;
+  color: $white;
+  background-color: $green;
+  transition: background-color 200ms ease-in-out;
+
+  &:focus,
+  &:active,
+  &:not(:disabled):hover {
+    background-color: $green-dark;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-cancel {
+  @extend %btn-base;
+  color: $white;
+  background-color: $red;
+  transition: background-color 200ms ease-in-out;
+
+  &:focus,
+  &:active,
+  &:not(:disabled):hover {
+    background-color: $red-dark;
+    outline: none;
+    box-shadow: none;
+  }
+}
