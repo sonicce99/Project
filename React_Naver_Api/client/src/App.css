@@ -1,0 +1,170 @@
+.logo {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.input-group {
+  width: 100% !important;
+  display: block;
+  border: 2px solid #04cf5d;
+  border-radius: 7px;
+}
+
+.searchLists.none {
+  display: none;
+}
+
+.searchLists {
+  list-style-type: none;
+  border: 2px solid #eee;
+  border-radius: 3px;
+}
+
+/* 검색어 리스트  */
+.liList {
+  display: flex;
+  align-items: center;
+}
+
+.liList:hover {
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+
+/* 검색어 돋보기 이미지 */
+.SearchImg {
+  margin-right: 10px;
+}
+
+/* 검섹어 리스트 h3 태그 */
+.searchList {
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #202020;
+  line-height: 1.7rem;
+  margin: 5px 0;
+}
+
+/* table th태그들 */
+.tableHead {
+  text-align: center;
+}
+
+.SearchedProductList {
+  border-top: 1px solid #eee;
+}
+
+.SearchedProductList:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+.SearchedProductList .imgs {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #eee;
+  vertical-align: middle;
+  margin: 20px;
+}
+
+.SearchedProductList .productNamePart {
+  position: relative;
+}
+
+.SearchedProductList .titles {
+  position: absolute;
+  top: 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.SearchedProductList .atag {
+  text-decoration: none;
+  color: #000;    
+}
+
+.SearchedProductList .titles:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.SearchedProductList .youtube_div {
+  position: absolute;
+  top: 140px;
+}
+
+.SearchedProductList .youtube_div .youtube {
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchedProductList .youtube_div .youtube .BsYoutube {
+  margin-right: 5px;
+}
+
+.SearchedProductList .category {
+  font-size: 12px;
+  color: #777777;
+}
+
+.SearchedProductList:hover {
+  background-color: #f9fafb;
+}
+
+.SearchedProductList:hover .imgs {
+  border: 2px solid #0083eecc;
+}
+
+.SearchedProductList .tableSet {
+  text-align: center;
+}
+
+.SearchedProductList .price {
+  color: #f24443;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* pagination */
+.nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav .pagination .page-item .page-link {
+  color: #000;
+  font-weight: 700;
+}
+
+.nav .pagination .page-item.active .page-link {
+  color: #ff5544;
+  background-color: transparent;
+  border: 1px solid #eee;
+}
+
+/* Myimg */
+.Myimg_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 550px;
+}
+
+.Myimg_div .Myimg {
+  width: 150px;
+  height: 150px;
+}
