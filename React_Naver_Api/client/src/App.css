@@ -1,8 +1,26 @@
-.logo {
-  width: 300px;
-  display: block;
-  margin: 0 auto;
-  padding: 40px 0;
+/* Header */
+
+.Navbar {
+  height: 160px;
+  position: relative;
+}
+
+.Navbar .logo {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -139px;
+  width: 280px;
+}
+
+.Navbar .menu {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+
+.Navbar .item {
+  margin-right: 5px;
 }
 
 .inner {
@@ -11,11 +29,19 @@
   position: relative;
 }
 
+/* 검색어 입력 */
 .input-group {
   width: 100% !important;
   display: block;
   border: 2px solid #04cf5d;
   border-radius: 7px;
+  position: relative;
+}
+
+.SearchBar {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 .searchLists.none {
@@ -26,6 +52,7 @@
   list-style-type: none;
   border: 2px solid #eee;
   border-radius: 3px;
+  background-color: #fff;
 }
 
 /* 검색어 리스트  */

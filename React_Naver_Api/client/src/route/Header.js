@@ -6,38 +6,32 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Navbar>
+        <Navbar className="Navbar">
+
           <NavbarBrand>
             <Link to={"/"}>
-              <img
-                src={require("../img/naverlogo.png").default}
-                height="90px"
-                width="200px"
-                alt=""
-              />
+              <img src={require("../img/naverlogo.png").default} className="logo" alt="네이버 로고" />
             </Link>
           </NavbarBrand>
-          {/* <NavbarToggler /> */}
+
           <Nav className="mr-auto" className="menu">
             <NavItem>
-              <NavLink to={"/board"}>게시판</NavLink>
+              <NavLink className="item" to={"/"}>Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to={"/SignIn"}>사용자 등록</NavLink>
+              <NavLink className="item" to={"/login"}>로그인</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to={"/naverApi"}>상품 등록</NavLink>
+              <NavLink className="item" to={"/signIn"}>회원가입</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to={"/product"}>구매 하기</NavLink>
+              <NavLink className="item" to={"/cart"}>장바구니</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to={"/cart"}>장바구니</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to={"/history"}>구매 내역</NavLink>
+              <NavLink className="item" to={"/history"}>구매 내역</NavLink>
             </NavItem>
           </Nav>
+
         </Navbar>
       </header>
     );
