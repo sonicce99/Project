@@ -57,7 +57,7 @@ const Home = (props) => {
 
   return (
     <>
-      <Category />
+      <Category setProducts={setProducts} />
       <InputGroup className="mb-3" >
         <FormControl placeholder="검색어를 입력하세요" value={value} onChange={(event) => { Search(event) }} />
         <Button variant="success">검색</Button>{' '}
