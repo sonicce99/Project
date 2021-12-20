@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+router.use(express.json());
 let dotenv = require("dotenv");
 dotenv.config();
 const request = require('request');
@@ -30,5 +31,29 @@ router.get('/naver/shop', function (req, res) {
     }
   });
 });
+
+router.post("/category", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/product?type=category"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+router.post("/category/sort", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/naverApi?type=shopList"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
 
 module.exports = router;
