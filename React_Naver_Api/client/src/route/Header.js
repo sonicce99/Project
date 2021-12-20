@@ -8,13 +8,11 @@ class Header extends Component {
       <header>
         <Navbar className="Navbar">
 
-          <NavbarBrand>
-            <Link to={"/"}>
-              <img src={require("../img/naverlogo.png").default} className="logo" alt="네이버 로고" />
-            </Link>
-          </NavbarBrand>
+          <Link to={"/"}>
+            <img src={require("../img/naverlogo.png").default} className="logo" alt="네이버 로고" />
+          </Link>
 
-          <Nav className="mr-auto" className="menu">
+          <Nav className="mr-auto">
             <NavItem>
               <NavLink className="item" to={"/"}>Home</NavLink>
             </NavItem>
