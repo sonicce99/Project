@@ -195,3 +195,9 @@
   width: 150px;
   height: 150px;
 }
+
+/* 장바구니 */
+.cartList .cartListImg {
+  width: 150px;
+  height: 150px;
+}
