@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="inner">
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" render={() => <Home userId={userId} />} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signIn" component={SignIn} />
         <Route path="/cart" render={() => <Cart userId={userId} />} />
