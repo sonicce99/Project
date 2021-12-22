@@ -19,7 +19,8 @@ const Category = ({ setProducts }) => {
       try {
         setCategory1_Word(word);
         const data = await axios.post("/category/sort", {
-          query: word
+          query: word,
+          display: 50
         })
         console.log(data.data.items);
         setProducts(data.data.items);
@@ -31,7 +32,8 @@ const Category = ({ setProducts }) => {
       try {
         setCategory2_Word(word);
         const data = await axios.post("/category/sort", {
-          query: word
+          query: word,
+          display: 50
         })
         console.log(data.data.items);
         setProducts(data.data.items);
@@ -43,7 +45,8 @@ const Category = ({ setProducts }) => {
       try {
         setCategory3_Word(word);
         const data = await axios.post("/category/sort", {
-          query: word
+          query: word,
+          display: 50
         })
         console.log(data.data.items);
         setProducts(data.data.items);
