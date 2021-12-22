@@ -4,9 +4,10 @@ router.use(express.json());
 let dotenv = require("dotenv");
 dotenv.config();
 const request = require('request');
+const { BsDisplay } = require('react-icons/bs');
 
 
-
+// 네이버 자동완성 검색어 목록 가져오기
 router.get("/naver/api", async (req, res) => {
   const url = 'https://mac.search.naver.com/mobile/ac?_q_enc=UTF-8&st=1&frm=mobile_nv&r_format=json&r_enc=UTF-8&r_unicode=0&t_koreng=1&ans=1&run=2&rev=4&q=' + encodeURI(req.query.keyword)
   request.get(url, function (error, response, body) {
@@ -14,7 +15,7 @@ router.get("/naver/api", async (req, res) => {
   });
 })
 
-
+// 검색어 클릭시 네이버 상품 목록 가져오기
 router.get('/naver/shop', function (req, res) {
   var api_url = 'https://openapi.naver.com/v1/search/shop.json?display=100&query=' + encodeURI(req.query.para);
   var options = {
@@ -32,6 +33,7 @@ router.get('/naver/shop', function (req, res) {
   });
 });
 
+// 카테고리1,2,3,4 분류 값 가져오기
 router.post("/category", async (req, res) => {
   const api_url = "http://54.180.63.177:5001/api/product?type=category"
   const options = {
@@ -44,6 +46,7 @@ router.post("/category", async (req, res) => {
   })
 })
 
+// 카테고리별 상품 목록 가져오기
 router.post("/category/sort", async (req, res) => {
   const api_url = "http://54.180.63.177:5001/api/naverApi?type=shopList"
   const options = {
@@ -51,6 +54,60 @@ router.post("/category/sort", async (req, res) => {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     form: req.body
   }
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+// 상품 등록
+router.post("/cart/insert", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/naverApi?type=save"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  console.log(req.body)
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+// 사용자별 장바구니 아이디 가져오기
+router.post("/cart/userId", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/cart?type=cart_id"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+});
+
+// 사용자 장바구니에 상품 담기
+router.post("/cart/save", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/cart?type=save"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+// 장바구니 리스트 가져오기
+router.post("/cart/cartList", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/cart?type=list"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  console.log(req.body)
   request.post(options, function (error, response, body) {
     res.send(body)
   })
