@@ -6,7 +6,7 @@ import Pagination from "../Pagination";
 import axios from "axios";
 import Category from "./Category"
 
-const Home = (props) => {
+const Home = ({ userId }) => {
 
   const [value, setValue] = useState(""); // input Value
   const [words, setWords] = useState([]); // 검색어 리스트
@@ -80,7 +80,7 @@ const Home = (props) => {
         {
           products.length === 0
             ? null
-            : <Table products={currentPosts} loading={loading} />
+            : <Table products={currentPosts} loading={loading} userId={userId} />
         }
         <Pagination
           postsPerPage={postsPerPage}
