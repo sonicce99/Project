@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <ul>
+        <ul className="footer_ul">
           <li className="priv">
             <a href="#n">동수의 로그북 처리방침</a>
           </li>
@@ -13,8 +13,9 @@ class Footer extends Component {
           </li>
         </ul>
         <div className="ft_p">
-          <span>주소 : 서울시 강남구 역삼동</span>
-          <span>Tel : 02-1234-5678</span>
+          <img className="footer_Mylogo" src="Mylogo.jpg" alt="동수의 로그북" />
+          <span>동수의 로그북  Copyright. </span>
+          <span>All Rignts Reserved.</span>
         </div>
       </footer>
     );
