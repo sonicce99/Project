@@ -11,6 +11,7 @@ const Home = ({ userId }) => {
   const [value, setValue] = useState(""); // input Value
   const [words, setWords] = useState([]); // 검색어 리스트
   const [products, setProducts] = useState([]); // 검색어 클릭시 상품 리스트
+  const [showSearchList, setShowSearchList] = useState(false); // 검색어 리스트 보여줄지 말지 결정하는 state
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(20);
@@ -27,7 +28,10 @@ const Home = ({ userId }) => {
     event.preventDefault();
     const keyword = event.target.value
     setValue(keyword);
-    if (keyword.length === 0) setProducts([]);
+    setShowSearchList(true);
+    if (keyword.length === 0) {
+      setProducts([]);
+    }
     axios
       .get("/naver/api", {
         params: {  //localhost:3000?keyword=어쩌구어쩌구 로 요청함. 아마도?ㅋ
@@ -52,6 +56,7 @@ const Home = ({ userId }) => {
       .then((res) => {
         setProducts(res.data.items);
         setLoading(false);
+        setShowSearchList(false);
       }).catch((error) => console.log(error))
   }
 
@@ -62,20 +67,25 @@ const Home = ({ userId }) => {
         <FormControl placeholder="검색어를 입력하세요" value={value} onChange={(event) => { Search(event) }} />
         <Button variant="success">검색</Button>{' '}
       </InputGroup>
-      <div className="SearchBar">
-        <ul className={words.length === 0 ? "searchLists none" : "searchLists"}>
-          {
-            words.map((t, i) => {
-              return (
-                <li className="liList" key={i} onClick={(event) => { SearchedListClick(event, words[i]) }}>
-                  <FaSearch className="SearchImg" />
-                  <h3 className="searchList">{t[0]}</h3>
-                </li>
-              )
-            })
-          }
-        </ul>
-      </div>
+      {
+        showSearchList === true
+          ?
+          <div className="SearchBar">
+            <ul className={words.length === 0 ? "searchLists none" : "searchLists"}>
+              {
+                words.map((t, i) => {
+                  return (
+                    <li className="liList" key={i} onClick={(event) => { SearchedListClick(event, words[i]) }}>
+                      <FaSearch className="SearchImg" />
+                      <h3 className="searchList">{t[0]}</h3>
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+          : null
+      }
       <div>
         {
           products.length === 0
