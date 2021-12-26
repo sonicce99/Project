@@ -1,10 +1,22 @@
-import React from "react";
+import * as React from 'react';
+import { useState } from "react";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
-const History = (props) => {
+const History = () => {
+
+  const [value, setValue] = useState("")
+
+
   return (
-    <div>
-      <h2>사용자 구매 내역</h2>
-    </div>
+    <TextField
+      id="outlined-basic"
+      label="Outlined"
+      variant="outlined"
+      error={value.length > 10 ? true : false}
+      helperText={value.length > 10 ? "Incorrect entry." : null}
+      onChange={(e) => setValue(e.target.value)}
+    />
   );
 };
 
