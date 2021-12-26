@@ -113,4 +113,74 @@ router.post("/cart/cartList", async (req, res) => {
   })
 })
 
+// 회원가입
+router.post("/signIn", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/user?type=signup"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  console.log(req.body)
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+// 로그인
+router.post("/logIn", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/user?type=login"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  console.log(req.body)
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+// 서버에서 webtoken (암호화된 사용자 정보) 받아오기 
+router.post("/webtoken", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/user?type=webtoken"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  console.log(req.body)
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+// 클라이언트에 있는 cookie 가 유효한 cookie 인지 검증
+router.post("/sessionCheck", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/user?type=sessionCheck"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  console.log(req.body)
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
+// 클라이언트에 있는 password cookie 가 유효한 cookie 인지 검증
+router.post("/sessionSignin", async (req, res) => {
+  const api_url = "http://54.180.63.177:5001/api/user?type=sessionSignin"
+  const options = {
+    url: api_url,
+    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    form: req.body
+  }
+  console.log(req.body)
+  request.post(options, function (error, response, body) {
+    res.send(body)
+  })
+})
+
 module.exports = router;
