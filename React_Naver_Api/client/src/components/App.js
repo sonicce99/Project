@@ -14,7 +14,7 @@ import cookie from "react-cookies";
 import axios from "axios";
 
 function App() {
-  const [userId, setUserId] = useState("");
+  const [userId, setUserId] = useState("sonicce99@naver.com");
   const location = useLocation();
 
   // useEffect(() => {
@@ -23,60 +23,60 @@ function App() {
   //   }
   // }, [location.pathname])
 
-  const fncCheckSession = async () => {
-    const tid = cookie.load("token_id");
-    const tname = cookie.load("token_name");
-    const tpwd = cookie.load("user_password");
+  // const fncCheckSession = async () => {
+  //   const tid = cookie.load("token_id");
+  //   const tname = cookie.load("token_name");
+  //   const tpwd = cookie.load("user_password");
 
-    if (tid && tname) {
-      axios.post("/sessionCheck", {
-        token_id: tid,
-        token_name: tname
-      })
-        .then((res) => {
-          console.log(res.data);
-          setUserId(res.data.decrypt_id.user_email);
+  //   if (tid && tname) {
+  //     axios.post("/sessionCheck", {
+  //       token_id: tid,
+  //       token_name: tname
+  //     })
+  //       .then((res) => {
+  //         console.log(res.data);
+  //         setUserId(res.data.decrypt_id.user_email);
 
-          if (tpwd) {
-            axios.post("/sessionSignin", {
-              user_email: res.data.decrypt_id.user_email,
-              user_password: tpwd
-            })
-              .then((res) => {
-                console.log(res.data.json[0]);
-                if (!res.data.json[0].user_email) {
-                  // 로그인 해제처리
-                  fncNotLogin();
-                }
-              })
-              .catch((error) => { })
-          } else {
-            // 로그인 해제처리
-            fncNotLogin();
-          }
-        })
-    } else {
-      // 로그인 해제처리
-      fncNotLogin();
-    }
-  }
+  //         if (tpwd) {
+  //           axios.post("/sessionSignin", {
+  //             user_email: res.data.decrypt_id.user_email,
+  //             user_password: tpwd
+  //           })
+  //             .then((res) => {
+  //               console.log(res.data.json[0]);
+  //               if (!res.data.json[0].user_email) {
+  //                 // 로그인 해제처리
+  //                 fncNotLogin();
+  //               }
+  //             })
+  //             .catch((error) => { })
+  //         } else {
+  //           // 로그인 해제처리
+  //           fncNotLogin();
+  //         }
+  //       })
+  //   } else {
+  //     // 로그인 해제처리
+  //     fncNotLogin();
+  //   }
+  // }
 
-  // cookie 제거
-  const fncRemoveCookie = () => {
-    cookie.remove("token_id", { path: "/" });
-    cookie.remove("token_name", { path: "/" });
-    cookie.remove("user_password", { path: "/" });
-  }
+  // // cookie 제거
+  // const fncRemoveCookie = () => {
+  //   cookie.remove("token_id", { path: "/" });
+  //   cookie.remove("token_name", { path: "/" });
+  //   cookie.remove("user_password", { path: "/" });
+  // }
 
-  // 로그아웃
-  const fncNotLogin = () => {
-    if (window.location.hash !== "nocookie") {
-      fncRemoveCookie();
-    }
-    setTimeout(() => {
-      window.location.href = "/login/#nocookie"
-    }, 1000)
-  }
+  // // 로그아웃
+  // const fncNotLogin = () => {
+  //   if (window.location.hash !== "nocookie") {
+  //     fncRemoveCookie();
+  //   }
+  //   setTimeout(() => {
+  //     window.location.href = "/login/#nocookie"
+  //   }, 1000)
+  // }
 
   return (
     <div className="App">
