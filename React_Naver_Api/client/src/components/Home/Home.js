@@ -22,7 +22,10 @@ const Home = ({ userId }) => {
   const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
 
   // Change Page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (event, pageNumber) => {
+    event.preventDefault();
+    setCurrentPage(pageNumber);
+  }
 
   const Search = (event) => {
     event.preventDefault();
