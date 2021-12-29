@@ -419,3 +419,40 @@ button {
   border-radius: 6px;
   font-weight: 900;  
 }
+
+.cartContainer {
+  width: 1100px;
+}
+
+.MuiDataGrid-cell:focus {
+  outline: 0 !important;
+}
+
+.cartContainer .Sumborder {
+  border: 1px solid black;
+  /* margin-top: 30px; */
+}
+
+/* .cartContainer .Sumborder:last-child {
+  margin: 0;
+} */
+
+.cartContainer .sum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 115px;
+  box-sizing: border-box;
+}
+
+.cartContainer .sumText {
+  font-weight: bold;
+  font-size: 19px;  
+}
+
+.cartContainer .sumTotal {
+  color: #00c63a;
+  margin-left: 10px;
+  margin-top: -2px;
+  font-size: 24px;
+}
