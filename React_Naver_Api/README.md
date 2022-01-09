@@ -1,36 +1,37 @@
-<img width="700" alt="Naver logo" src="https://user-images.githubusercontent.com/87749134/148639783-2d571ccd-0396-4b0b-978b-63d283db65a8.png">
+
+<div align=center><img width="500" alt="Naver logo" src="https://user-images.githubusercontent.com/87749134/148639783-2d571ccd-0396-4b0b-978b-63d283db65a8.png"></div>
 
 # Make Naver
 
 Make Naver 는 약 1개월 동안 준비한 개인 프로젝트입니다. 패스트캠퍼스에서 핀테크 서비스 프론트엔드 개발자 양성 과정을 2021년 7월 19일 부터 2022년 2월 14일까지 약 7개월간 수강했으며 2021년 11월 18일 부터 12월 3일 까지 약 2주간 React를 배운 후, 12월 6일부터 12월 23일까지 약 17일 동안 만든 개인 프로젝트입니다. 그렇기 때문에 처음 리액트 설계부분에 부족함이 있어 Redux를 적용하지 못했다든가, 코드를 최적화 하지 못했다는 아쉬움이 있습니다. 하지만 한달도 안되는 기간동안, 수업을 들으며 리액트를 사용해 제가 의도한 기능을 제대로 수행하는 사이트를 만들었다는 것을 높게 평가해 주시면 좋겠습니다.  
 
-<img width="500" alt="프로젝트 기간" src="https://user-images.githubusercontent.com/87749134/148640828-d614c002-9c0d-4923-8b12-528201f028c7.png">
+<img width="700" alt="프로젝트 기간" src="https://user-images.githubusercontent.com/87749134/148640828-d614c002-9c0d-4923-8b12-528201f028c7.png">
+
+## My youtube channel
+
+### 제가 만든 프로젝트를 영상으로 만들어 youtube에 업로드 해두었습니다.
 
 
 
-### 프로젝트 개요
+## 프로젝트 개요
 
 제 프로젝트는 사용자가 원하는 제품을 네이버 랭킹순으로 빠르게 찾아서 구매하는 것을 지향하고 있습니다.
-사용자는 본인이 원하는 제품을 실제 네이버 연관검색어를 통해 찾아낼 수 있고 네이버 쇼핑에 등록된 제품을 최저가로 순으로 바로 찾아줍니다. 수많은 제품들 중 카테고리를 1~4단계로 나누어 카테고리 단계별로 구분된 제품들만 모아서 볼 수 있으며, 사용자가 원하는 제품을 실제로 구매할 수 있으며 원한다면 장바구니에 담아 원하는 제품만 구매할 수 있습니다.
+사용자는 본인이 원하는 제품을 실제 네이버 연관검색어를 통해 찾아낼 수 있고 네이버 쇼핑에 등록된 제품을 최저가로 순으로 바로 찾아줍니다. 수많은 제품들 중 카테고리를 1~4단계로 나누어 카테고리 단계별로 구분된 제품들만 모아서 볼 수 있으며, 사용자가 원하는 제품을 실제로 구매할 수 있고 원한다면 장바구니에 담아 원하는 제품만 구매할 수 있습니다.
 
 
-### 프로젝트 목표점
+## 프로젝트 목표점
 
 React를 가지고 처음 구현하는 프로젝트 였던 만큼 단순히 기능만을 구현하는것이 아닌 최대한 Naver와 같게, 하지만 단순히 똑같이 구현하기 보다는 저만의 색깔을 입혀서 만들고 싶었습니다. 그래서 API 통신 하는 과정에서 로딩중일 때는 제 트레이트 마크인 로고를 보여주게 제작했습니다.
 
-<img width="500" alt="동수의 로그북" src="https://user-images.githubusercontent.com/87749134/148642433-c35704ba-4bcd-4390-b2c8-1492fd9e9913.jpg">
+<img width="200" alt="동수의 로그북" src="https://user-images.githubusercontent.com/87749134/148642433-c35704ba-4bcd-4390-b2c8-1492fd9e9913.jpg">
 
-
-### My youtube channel
-
-
-### Make Naver 개발 로드맵
+## Make Naver 개발 로드맵
 
 <img width="600" alt="스크린샷 2022-01-08 오후 8 35 32" src="https://user-images.githubusercontent.com/87749134/148642624-089a0a04-e15a-4cc4-8c30-cedbd5f1e5b6.png">
 
 클라이언트(React) 와 Express 프레임워크를 사용한 서버가 있고, Naver 측에서 데이터를 받아오고, 패스트캠퍼스 측에서 제공해주신 서버와 통신을 합니다.
 
-##### Naver 오픈 API 활용 이유
+## Naver 오픈 API 활용 이유
 
 요즘 트렌드 중 하나로 restful API 를 주로 사용하고 *많은 채용 사이트에서 자격 요건, 주요 업무로 Restful API 를 사용해야 한다* 는 점을 알게 되었습니다. 이때 네이버 개발자센터에서 Open API 로 REST API 를 제공한다는 것을 알게 되었고 이를 경험 해 보면 좋겠다는 생각에 네이버 쇼핑 페이지를 구현해 보기로 했습니다.
 
@@ -44,7 +45,7 @@ React를 가지고 처음 구현하는 프로젝트 였던 만큼 단순히 기�
 
 <img width="700" alt="스크린샷 2022-01-08 오후 8 44 49" src="https://user-images.githubusercontent.com/87749134/148642887-aa01051a-d68a-487a-ad21-90312928b39b.png">
 
-##### 폴더 구조
+## 폴더 구조
 
 ↓ Client와 Server
 
@@ -88,4 +89,4 @@ Client에 component 하위 폴더로는 cart, history, Home, login, signIn 폴�
 <img width="401" alt="스크린샷 2022-01-09 오후 1 10 07" src="https://user-images.githubusercontent.com/87749134/148669080-61047e47-9f5d-40c7-9838-6d279e4176f8.png">
 
 
-##### AWS를 사용하여 Express와 MySQL 연동
+## AWS를 사용하여 Express와 MySQL 연동
