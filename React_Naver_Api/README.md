@@ -5,7 +5,7 @@
 
 Make Naver 는 약 1개월 동안 준비한 개인 프로젝트입니다. 패스트캠퍼스에서 핀테크 서비스 프론트엔드 개발자 양성 과정을 2021년 7월 19일 부터 2022년 2월 14일까지 약 7개월간 수강했으며 2021년 11월 18일 부터 12월 3일 까지 약 2주간 React를 배운 후, 12월 6일부터 12월 23일까지 약 17일 동안 만든 개인 프로젝트입니다. 그렇기 때문에 처음 리액트 설계부분에 부족함이 있어 Redux를 적용하지 못했다든가, 코드를 최적화 하지 못했다는 아쉬움이 있습니다. 하지만 한달도 안되는 기간동안, 수업을 들으며 리액트를 사용해 제가 의도한 기능을 제대로 수행하는 사이트를 만들었다는 것을 높게 평가해 주시면 좋겠습니다.  
 
-<img width="700" alt="프로젝트 기간" src="https://user-images.githubusercontent.com/87749134/148640828-d614c002-9c0d-4923-8b12-528201f028c7.png">
+<div align=center><img width="700" alt="프로젝트 기간" src="https://user-images.githubusercontent.com/87749134/148640828-d614c002-9c0d-4923-8b12-528201f028c7.png"></div>
 
 ## My youtube channel
 
@@ -51,11 +51,12 @@ React를 가지고 처음 구현하는 프로젝트 였던 만큼 단순히 기�
 
 <img width="228" alt="스크린샷 2022-01-09 오후 12 49 11" src="https://user-images.githubusercontent.com/87749134/148668639-a95637ee-219c-4a83-b157-641bcb5dbb22.png">  
 
-Client에서 바로 API 통신을 하려고 했더니 CORS Error가 발생했습니다. 이 문제를 해결하기 위해서 SOP와 CORS에 대해서 공부했고 제 Github에 정리해 두었습니다.
+Client에서 바로 API 통신을 하려고 했더니 CORS Error가 발생했습니다.
+이 문제를 해결하기 위해서 SOP와 CORS에 대해서 공부했고 제 Github에 정리해 두었습니다.
 
 - SOP, CORS 내용 정리 : https://github.com/sonicce99/TIL/blob/main/TMI/2021.12.07.md
 
-CRA를 사용한다면 Proxy를 사용하여 간단하게 해결 할 수 있었지만 저는 서버끼리 통신하여 문제를 해결해 보고 싶었습니다. 따라서 Express 모듈을 사용하여 제 서버를 구축하였습니다. 그래서 클라이언트에서의 요청을 제 서버가 받아서 네이버 서버와 통신하며 CORS (Cross Origin Resource Sharing) Error 를 해결했습니다.
+CRA를 사용한다면 Proxy를 사용하여 간단하게 해결 할 수 있었지만 저는 서버끼리 통신하여 문제를 해결해 보고 싶었습니다. 따라서 Express 모듈을 사용하여 제 서버를 따로 구축했습니다. 그래서 클라이언트에서의 요청을 제 서버가 받아서 네이버 서버와 통신하며 CORS (Cross Origin Resource Sharing) Error 를 해결했습니다.
 
 ↓ Client
 
@@ -72,7 +73,7 @@ Client에 component 하위 폴더로는 cart, history, Home, login, signIn 폴�
 
 ↓ 버전 업그레이드를 한 모습  
 
-<img width="586" alt="스크린샷 2022-01-09 오후 1 17 02" src="https://user-images.githubusercontent.com/87749134/148669228-c10f4f46-3eae-45a5-b55a-a1cfec5ef91e.png">  
+<img width="586" alt="스크린샷 2022-01-09 오후 1 17 02" src="https://user-images.githubusercontent.com/87749134/148669876-7d1f2149-4acd-4f7a-bc51-2c59f688b655.png">
 
 ↓ 5000번으로 설정된 Control Center 가 동작중인 모습  
 <img width="652" alt="스크린샷 2022-01-09 오후 1 15 25" src="https://user-images.githubusercontent.com/87749134/148669208-8cd9794f-1f87-4321-87fc-b8c3505a5807.png">  
