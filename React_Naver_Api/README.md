@@ -9,6 +9,9 @@ Make Naver 는 약 1개월 동안 준비한 개인 프로젝트입니다. 패스
 
 ## My youtube channel
 
+https://www.youtube.com/channel/UCqa4CnlUu--_X0lXWURBNEQ
+
+
 ### 제가 만든 프로젝트를 영상으로 만들어 youtube에 업로드 해두었습니다.
 
 
